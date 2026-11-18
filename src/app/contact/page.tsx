@@ -41,7 +41,7 @@ export default function ContactPage() {
       d: "ช่องทางที่เร็วที่สุด ส่งไฟล์แบบ รูปถ่าย และขนาดได้ในแชทเดียว",
       href: lineMessageUrl(LINE_MSG.quote),
       label: `แชท LINE ${LINE_ID}`,
-      cls: "btn--line",
+      cls: "btn--navy",
       icon: <IconLine size={18} />,
       ext: true,
     },
@@ -51,7 +51,7 @@ export default function ContactPage() {
       d: `คุยรายละเอียดโครงการและสอบถามเบื้องต้น ${OPENING_HOURS_TH}`,
       href: `tel:${PHONE_MAIN.tel}`,
       label: `โทร ${PHONE_MAIN.display}`,
-      cls: "btn--primary",
+      cls: "btn--outline-dark",
       icon: <IconPhone size={18} />,
       ext: false,
     },
@@ -85,7 +85,7 @@ export default function ContactPage() {
                 <p>{w.d}</p>
                 <a
                   href={w.href}
-                  className={`btn ${w.cls}`}
+                  className={`btn btn--sm ${w.cls}`}
                   {...(w.ext ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 >
                   {w.icon}

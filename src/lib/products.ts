@@ -74,7 +74,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "overhead-crane",
     icon: "crane",
-    nameTh: "เครนเหนือศีรษะ Overhead Crane",
+    nameTh: "เครนเหนือศีรษะ",
     nameEn: "Overhead Crane",
     short: "ติดตั้งเครนเหนือศีรษะพร้อมรางและโครงสร้างรองรับในโรงงานใหม่หรืออาคารเดิม ออกแบบโครงสร้างอาคารให้รับเครนตั้งแต่ต้น",
     metaTitle: "รับติดตั้ง Overhead Crane เครนเหนือศีรษะ พร้อมโครงสร้าง",

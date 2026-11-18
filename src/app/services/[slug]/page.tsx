@@ -7,7 +7,6 @@ import JsonLd from "@/components/JsonLd";
 import ViewTracker from "@/components/ViewTracker";
 import SystemDiagram from "@/components/SystemDiagram";
 import ProjectCard from "@/components/ProjectCard";
-import { IconLine, IconPhone } from "@/components/Icons";
 import { SYSTEMS, getSystem } from "@/lib/systems";
 import { PROJECTS } from "@/lib/projects";
 import { SITE_URL, COMPANY_TH, PHONE_MAIN, lineMessageUrl, AREA_SERVED } from "@/lib/site";
@@ -128,18 +127,16 @@ export default async function SystemPage({ params }: Props) {
                 <p style={{ fontSize: 15, color: "var(--gray)", marginBottom: 16 }}>
                   ส่งแบบหรือขนาดอาคาร (กว้าง × ยาว × สูง) และที่ตั้งโครงการ ทีมงานเสนอราคาพร้อมแผนเวลา
                 </p>
-                <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                <div className="btn-row">
                   <a
                     href={lineMessageUrl(`สนใจงาน${s.nameTh} (${s.nameEn}) ขอใบเสนอราคา จะส่งแบบ/ขนาดให้ครับ (จากเว็บ)`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn--line"
+                    className="btn btn--sm btn--navy"
                   >
-                    <IconLine size={16} />
-                    ส่งแบบขอราคาทาง LINE
+                                        ส่งแบบทาง LINE
                   </a>
-                  <a href={`tel:${PHONE_MAIN.tel}`} className="btn btn--primary">
-                    <IconPhone size={16} />
+                  <a href={`tel:${PHONE_MAIN.tel}`} className="btn btn--sm btn--outline-dark">
                     โทร <span className="num">{PHONE_MAIN.display}</span>
                   </a>
                 </div>

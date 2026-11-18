@@ -5,7 +5,6 @@ import CTA from "@/components/CTA";
 import PageHeader from "@/components/PageHeader";
 import JsonLd from "@/components/JsonLd";
 import ViewTracker from "@/components/ViewTracker";
-import { IconLine, IconPhone } from "@/components/Icons";
 import { PRODUCTS, getProduct } from "@/lib/products";
 import SagaIcon from "@/components/SagaIcon";
 import { SITE_URL, COMPANY_TH, PHONE_MAIN, lineMessageUrl, AREA_SERVED } from "@/lib/site";
@@ -96,13 +95,11 @@ export default async function ProductPage({ params }: Props) {
                     <li key={n}>{n}</li>
                   ))}
                 </ol>
-                <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 16 }}>
-                  <a href={lineMessageUrl(lineText)} target="_blank" rel="noopener noreferrer" className="btn btn--line">
-                    <IconLine size={16} />
-                    ส่งข้อมูลขอราคาทาง LINE
+                <div className="btn-row" style={{ marginTop: 16 }}>
+                  <a href={lineMessageUrl(lineText)} target="_blank" rel="noopener noreferrer" className="btn btn--sm btn--navy">
+                                        ส่งข้อมูลทาง LINE
                   </a>
-                  <a href={`tel:${PHONE_MAIN.tel}`} className="btn btn--primary">
-                    <IconPhone size={16} />
+                  <a href={`tel:${PHONE_MAIN.tel}`} className="btn btn--sm btn--outline-dark">
                     โทร <span className="num">{PHONE_MAIN.display}</span>
                   </a>
                 </div>

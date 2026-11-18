@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { SYSTEMS } from "@/lib/systems";
 import { PRODUCTS } from "@/lib/products";
-import { lineMessageUrl, LINE_MSG, PHONE_MAIN } from "@/lib/site";
-import { IconLine, IconPhone } from "@/components/Icons";
+import { PHONE_MAIN } from "@/lib/site";
+import { IconPhone } from "@/components/Icons";
 import Logo from "@/components/Logo";
 
 const navItems = [
@@ -51,7 +51,7 @@ export default function Nav() {
       <nav className={`nav${compact ? " nav--compact" : ""}`} aria-label="เมนูหลัก">
         <div className="nav-inner">
           <Link href="/" className="nav-logo" aria-label="S-2000 กลับหน้าแรก">
-            <Logo height={compact ? 36 : 44} />
+            <Logo height={compact ? 34 : 40} />
           </Link>
 
           <ul className="nav-links">
@@ -111,10 +111,9 @@ export default function Nav() {
           </ul>
 
           <div className="nav-cta">
-            <a href={lineMessageUrl(LINE_MSG.quote)} target="_blank" rel="noopener noreferrer" className="btn btn--line">
-              <IconLine size={16} />
-              ส่งแบบขอราคา
-            </a>
+            <Link href="/contact" className="btn btn--sm btn--navy">
+              ติดต่อเรา
+            </Link>
           </div>
 
           <button
@@ -151,13 +150,11 @@ export default function Nav() {
           ))}
         </ul>
         <div className="mobile-menu-cta" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          <a href={lineMessageUrl(LINE_MSG.quote)} target="_blank" rel="noopener noreferrer" className="btn btn--line btn--lg">
-            <IconLine size={18} />
-            ส่งแบบขอราคาทาง LINE
-          </a>
-          <a href={`tel:${PHONE_MAIN.tel}`} className="btn btn--primary btn--lg">
-            <IconPhone size={18} />
-            โทร <span className="num">{PHONE_MAIN.display}</span>
+          <Link href="/contact" className="btn btn--navy">
+            ติดต่อเรา
+          </Link>
+          <a href={`tel:${PHONE_MAIN.tel}`} className="text-link" style={{ justifyContent: "center" }}>
+            <IconPhone size={16} /> <span className="num">{PHONE_MAIN.display}</span>
           </a>
         </div>
       </div>

@@ -17,7 +17,6 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Analytics, { AnalyticsBody } from "@/components/Analytics";
-import FloatingCta from "@/components/FloatingCta";
 import CookieConsent from "@/components/CookieConsent";
 import { SITE_URL, SITE_NAME, COMPANY_TH, COMPANY_EN } from "@/lib/site";
 
@@ -66,7 +65,6 @@ export default function RootLayout({
         <Nav />
         <div id="content">{children}</div>
         <Footer />
-        <FloatingCta />
         <CookieConsent />
       </body>
     </html>
