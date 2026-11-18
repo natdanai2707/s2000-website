@@ -5,6 +5,7 @@ import JsonLd from "@/components/JsonLd";
 import ProjectCard from "@/components/ProjectCard";
 import SystemCard from "@/components/SystemCard";
 import ProcessSteps from "@/components/ProcessSteps";
+import SagaIcon, { type SagaIconName } from "@/components/SagaIcon";
 import { IconLine, IconPhone } from "@/components/Icons";
 import { SYSTEMS } from "@/lib/systems";
 import { PROJECTS } from "@/lib/projects";
@@ -31,20 +32,24 @@ export const metadata: Metadata = {
   },
 };
 
-const audiences = [
+const audiences: { t: string; d: string; i: SagaIconName }[] = [
   {
+    i: "factory",
     t: "เจ้าของโรงงาน",
     d: "สร้างโรงงานใหม่ ขยายอาคาร เพิ่มชั้นลอยหรือเครน ได้ระบบที่คุ้มน้ำหนักเหล็กและแผนเวลาที่ชัด",
   },
   {
+    i: "warehouse",
     t: "นักพัฒนาโกดังให้เช่า",
     d: "ต้นทุนต่อตารางเมตรที่แข่งขันได้ ผลิตในโรงงาน ติดตั้งเร็ว สร้างทีละเฟสได้",
   },
   {
+    i: "hardhat",
     t: "ผู้รับเหมาหลัก",
     d: "หาผู้รับเหมาช่วงงานเหล็ก รับผลิตตามแบบหรือผลิตพร้อมติดตั้ง ส่งแบบและ BOQ มาประเมินราคา",
   },
   {
+    i: "ruler",
     t: "ที่ปรึกษาและวิศวกรออกแบบ",
     d: "ปรึกษาความเป็นไปได้ในการผลิตและติดตั้ง รายละเอียดจุดต่อ และทางเลือกระบบตั้งแต่ขั้นออกแบบ",
   },
@@ -166,6 +171,7 @@ export default function HomePage() {
           <div className="grid-4">
             {audiences.map((a) => (
               <div key={a.t} className="card audience-card">
+                <span className="icon-badge"><SagaIcon name={a.i} size={28} /></span>
                 <h3>{a.t}</h3>
                 <p>{a.d}</p>
               </div>
@@ -195,6 +201,7 @@ export default function HomePage() {
           <div className="grid-4">
             {PRODUCTS.map((p) => (
               <Link key={p.slug} href={`/products/${p.slug}`} className="card audience-card link-card">
+                <span className="icon-badge"><SagaIcon name={p.icon} size={28} /></span>
                 <span className="project-loc">{p.nameEn}</span>
                 <h3>{p.nameTh}</h3>
                 <p>{p.short}</p>

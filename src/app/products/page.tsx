@@ -3,6 +3,7 @@ import Link from "next/link";
 import CTA from "@/components/CTA";
 import PageHeader from "@/components/PageHeader";
 import { PRODUCTS } from "@/lib/products";
+import SagaIcon from "@/components/SagaIcon";
 
 export const metadata: Metadata = {
   title: "งานผลิตอื่น ชั้นลอยโรงงาน ถังน้ำมัน ถังน้ำยาง Overhead Crane",
@@ -25,6 +26,7 @@ export default function ProductsPage() {
           <div className="grid-2">
             {PRODUCTS.map((p) => (
               <Link key={p.slug} href={`/products/${p.slug}`} className="card audience-card link-card">
+                <span className="icon-badge"><SagaIcon name={p.icon} size={28} /></span>
                 <span className="project-loc">{p.nameEn}</span>
                 <h2 style={{ fontSize: 24 }}>{p.nameTh}</h2>
                 <p>{p.short}</p>

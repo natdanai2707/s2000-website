@@ -3,6 +3,7 @@ import Image from "next/image";
 import CTA from "@/components/CTA";
 import PageHeader from "@/components/PageHeader";
 import { IconLine, IconPhone } from "@/components/Icons";
+import SagaIcon from "@/components/SagaIcon";
 import {
   LINE_ID,
   LINE_URL,
@@ -61,7 +62,7 @@ export default function ContactPage() {
       href: lineMessageUrl(LINE_MSG.siteVisit),
       label: "ขอนัดดูหน้างาน",
       cls: "btn--outline-dark",
-      icon: null,
+      icon: <SagaIcon name="calendar" size={18} />,
       ext: true,
     },
   ];

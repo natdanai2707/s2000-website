@@ -7,6 +7,7 @@ import JsonLd from "@/components/JsonLd";
 import ViewTracker from "@/components/ViewTracker";
 import { IconLine, IconPhone } from "@/components/Icons";
 import { PRODUCTS, getProduct } from "@/lib/products";
+import SagaIcon from "@/components/SagaIcon";
 import { SITE_URL, COMPANY_TH, PHONE_MAIN, lineMessageUrl, AREA_SERVED } from "@/lib/site";
 
 interface Props {
@@ -85,6 +86,9 @@ export default async function ProductPage({ params }: Props) {
               </ul>
             </div>
             <div className="sticky-col">
+              <div className="card diagram-card" style={{ display: "flex", justifyContent: "center", marginBottom: 24 }}>
+                <SagaIcon name={p.icon} size={96} />
+              </div>
               <div className="card quote-box" style={{ marginTop: 0 }}>
                 <h3 style={{ fontSize: 19, marginBottom: 8 }}>ข้อมูลที่ควรส่งมาเพื่อขอราคา</h3>
                 <ol className="need-list">

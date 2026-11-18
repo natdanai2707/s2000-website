@@ -125,7 +125,12 @@ export default function Footer() {
               นโยบายความเป็นส่วนตัว
             </Link>
           </div>
-          <div className="num">HAT YAI · SONGKHLA · THAILAND</div>
+          <div>
+            <span className="num">HAT YAI · SONGKHLA · THAILAND</span> ·{" "}
+            <a href="https://iconsaga.com" target="_blank" rel="noopener" style={{ color: "inherit" }}>
+              Icons by IconSaga · iconsaga.com
+            </a>
+          </div>
         </div>
       </div>
     </footer>

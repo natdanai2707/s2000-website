@@ -974,3 +974,20 @@ a { color: inherit; cursor: pointer; }
 .compare-table td { vertical-align: top; }
 .nav-logo svg { transition: height 0.25s ease; }
 @media (max-width: 639px) { .grid-4 { grid-template-columns: 1fr; } }
+
+/* IconSaga icon badges */
+.icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--amber-soft);
+  color: var(--amber);
+  margin-bottom: 4px;
+  flex: 0 0 auto;
+}
+.process-top { display: flex; align-items: center; justify-content: space-between; }
+.process-top .icon-badge { background: var(--paper); color: var(--navy); border: 1px solid var(--rule); margin: 0; }
+.section--alt .process-top .icon-badge { background: #fff; }
+.diagram-card svg[aria-hidden] { color: var(--navy); }

@@ -1,9 +1,11 @@
+import type { SagaIconName } from "@/components/SagaIcon";
 // งานผลิตอื่นนอกเหนือจากโครงสร้างอาคาร — แต่ละตัวสร้างหน้า /products/<slug> + sitemap + Service schema อัตโนมัติ
 
 export interface Product {
   slug: string;
   nameTh: string;
   nameEn: string;
+  icon: SagaIconName;
   short: string;
   metaTitle: string;
   metaDescription: string;
@@ -17,6 +19,7 @@ export interface Product {
 export const PRODUCTS: Product[] = [
   {
     slug: "mezzanine",
+    icon: "rack",
     nameTh: "ชั้นลอยโรงงาน",
     nameEn: "Steel Mezzanine Floor",
     short: "เพิ่มพื้นที่ใช้สอยในโรงงานและโกดังเดิมด้วยชั้นลอยโครงเหล็ก รับน้ำหนักตามการใช้งานจริง ติดตั้งโดยไม่ต้องรื้ออาคาร",
@@ -34,6 +37,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     slug: "oil-tank",
+    icon: "oil-tank",
     nameTh: "ถังน้ำมัน",
     nameEn: "Steel Oil Storage Tank",
     short: "ผลิตถังเก็บน้ำมันเหล็กทั้งแบบตั้งและแบบนอน ตามขนาดความจุที่ต้องการ สำหรับโรงงาน สถานีบริการ และงานเกษตรอุตสาหกรรม",
@@ -51,6 +55,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     slug: "latex-tank",
+    icon: "drop",
     nameTh: "ถังน้ำยาง",
     nameEn: "Latex Storage Tank",
     short: "ผลิตถังเก็บน้ำยางพาราสำหรับโรงงานน้ำยางข้น สหกรณ์ และจุดรับซื้อ ออกแบบตามความจุและการใช้งานในภาคใต้",
@@ -68,6 +73,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     slug: "overhead-crane",
+    icon: "crane",
     nameTh: "เครนเหนือศีรษะ Overhead Crane",
     nameEn: "Overhead Crane",
     short: "ติดตั้งเครนเหนือศีรษะพร้อมรางและโครงสร้างรองรับในโรงงานใหม่หรืออาคารเดิม ออกแบบโครงสร้างอาคารให้รับเครนตั้งแต่ต้น",

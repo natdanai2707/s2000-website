@@ -3,6 +3,7 @@ import Link from "next/link";
 import CTA from "@/components/CTA";
 import PageHeader from "@/components/PageHeader";
 import ProcessSteps from "@/components/ProcessSteps";
+import SagaIcon, { type SagaIconName } from "@/components/SagaIcon";
 import { YEARS_IN_BUSINESS, FOUNDED_YEAR_BE, COMPANY_TH, COMPANY_EN, SISTER } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -12,20 +13,24 @@ export const metadata: Metadata = {
   openGraph: { url: "/about", title: `เกี่ยวกับ S-2000 | ผู้รับเหมาโครงสร้างเหล็ก ${YEARS_IN_BUSINESS} ปี` },
 };
 
-const strengths = [
+const strengths: { t: string; d: string; i: SagaIconName }[] = [
   {
+    i: "factory",
     t: "ผลิตเองในโรงงาน",
     d: "ชิ้นส่วนโครงสร้างตัด เจาะ เชื่อม และทำสีในโรงงานที่หาดใหญ่ คุมคุณภาพและเวลาได้เอง ไม่ต้องรอผู้ผลิตภายนอก",
   },
   {
+    i: "ruler",
     t: "เลือกระบบให้ตรงงาน",
     d: "ทำได้ทั้ง 4 ระบบ จึงเสนอระบบที่คุ้มน้ำหนักเหล็กที่สุดสำหรับงานนั้น ไม่ใช่ระบบเดียวที่เราถนัด",
   },
   {
+    i: "truck",
     t: "วัสดุจากบริษัทในเครือ",
     d: `${SISTER.name}จัดหาเหล็กรูปพรรณและตัดเลเซอร์ CNC ให้ ลดเวลารอวัสดุและคุมเกรดเหล็กได้ตั้งแต่ต้นทาง`,
   },
   {
+    i: "hardhat",
     t: "ทีมติดตั้งพร้อมเดินทาง",
     d: "ทีมติดตั้งของบริษัททำงานร่วมกับทีมช่างพันธมิตรที่ผ่านงานกันมา รองรับหลายโครงการพร้อมกันทั่วประเทศ",
   },
@@ -73,6 +78,7 @@ export default function AboutPage() {
           <div className="grid-4">
             {strengths.map((s) => (
               <div key={s.t} className="card audience-card">
+                <span className="icon-badge"><SagaIcon name={s.i} size={28} /></span>
                 <h3>{s.t}</h3>
                 <p>{s.d}</p>
               </div>
