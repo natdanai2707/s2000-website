@@ -1,0 +1,68 @@
+import {
+  SITE_URL,
+  COMPANY_TH,
+  COMPANY_EN,
+  FOUNDED_YEAR,
+  EMAIL,
+  PHONE_MAIN,
+  OFFICE,
+  OPENING_HOURS_SCHEMA,
+  AREA_SERVED,
+  sameAs,
+} from "@/lib/site";
+
+// Organization + WebSite + LocalBusiness (GeneralContractor) ใต้ @graph เดียว
+export const orgSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: COMPANY_TH,
+      alternateName: [COMPANY_EN, "S-2000", "เอส-2000"],
+      url: SITE_URL,
+      logo: `${SITE_URL}/images/logo.png`,
+      foundingDate: String(FOUNDED_YEAR),
+      foundingLocation: "หาดใหญ่ สงขลา",
+      telephone: PHONE_MAIN.display,
+      ...(EMAIL ? { email: EMAIL } : {}),
+      areaServed: AREA_SERVED,
+      ...(sameAs.length ? { sameAs } : {}),
+      knowsAbout: ["Steel Structure", "Pre-Engineered Building", "Steel Truss", "Cellular Beam", "Mezzanine Floor", "Overhead Crane"],
+      brand: { "@type": "Brand", name: "S-2000" },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: COMPANY_TH,
+      inLanguage: "th-TH",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "GeneralContractor",
+      "@id": `${SITE_URL}/#business`,
+      parentOrganization: { "@id": `${SITE_URL}/#organization` },
+      name: COMPANY_TH,
+      alternateName: COMPANY_EN,
+      description:
+        "ผู้รับเหมาโครงสร้างเหล็ก ออกแบบ ผลิต และติดตั้งโรงงาน โกดัง ชั้นลอย หลังคาช่วงกว้าง ระบบ Truss, PEB, Beam, Cellular Beam พร้อมงานถังน้ำมัน ถังน้ำยาง และเครนเหนือศีรษะ",
+      url: SITE_URL,
+      image: `${SITE_URL}/images/og-image.jpg`,
+      telephone: PHONE_MAIN.display,
+      address: {
+        "@type": "PostalAddress",
+        ...(OFFICE.streetAddress ? { streetAddress: OFFICE.streetAddress } : {}),
+        addressLocality: OFFICE.addressLocality,
+        addressRegion: OFFICE.addressRegion,
+        postalCode: OFFICE.postalCode,
+        addressCountry: "TH",
+      },
+      ...(OFFICE.geo ? { geo: { "@type": "GeoCoordinates", latitude: OFFICE.geo.lat, longitude: OFFICE.geo.lng } } : {}),
+      ...(OFFICE.mapsUrl ? { hasMap: OFFICE.mapsUrl } : {}),
+      openingHours: OPENING_HOURS_SCHEMA,
+      areaServed: AREA_SERVED,
+      ...(sameAs.length ? { sameAs } : {}),
+    },
+  ],
+};
