@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESC,
     url: WAREHOUSE.path,
-    images: [{ url: "/images/wh-asia.webp", width: 1113, height: 609, alt: "โกดังให้เช่า หาดใหญ่ S-2000 Warehouse" }],
+    images: [{ url: "/images/wh-asia.webp", width: 683, height: 384, alt: "โกดังให้เช่า หาดใหญ่ S-2000 Warehouse" }],
   },
 };
 
