@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESC,
     url: WAREHOUSE.path,
-    images: [{ url: "/images/wh-asia.webp", width: 683, height: 384, alt: "โกดังให้เช่า หาดใหญ่ S-2000 Warehouse" }],
+    images: [{ url: "/images/wh-hero.webp", width: 2000, height: 1125, alt: "โกดังให้เช่า หาดใหญ่ S-2000 Warehouse" }],
   },
 };
 
@@ -46,7 +46,7 @@ const schema = {
       alternateName: WAREHOUSE.brand,
       description: DESC,
       url: `${SITE_URL}${WAREHOUSE.path}`,
-      image: `${SITE_URL}/images/wh-asia.webp`,
+      image: `${SITE_URL}/images/wh-hero.webp`,
       logo: `${SITE_URL}/images/logo-warehouse.png`,
       telephone: WAREHOUSE.phone.display,
       email: WAREHOUSE.email,
