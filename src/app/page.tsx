@@ -14,7 +14,7 @@ import { YEARS_IN_BUSINESS, FOUNDED_YEAR_BE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: "ผู้รับเหมาโครงสร้างเหล็ก โรงงาน โกดัง ชั้นลอย ทั่วประเทศ | S-2000 Steel Fabricated" },
-  description: `S-2000 ผู้รับเหมาโครงสร้างเหล็ก ${YEARS_IN_BUSINESS} ปี ออกแบบ ผลิต ติดตั้ง โรงงาน โกดัง ชั้นลอย หลังคาช่วงกว้าง 4 ระบบ Truss, PEB, Beam, Cellular Beam ผลงานหลังคาสถานีรถไฟสายสีแดง`,
+  description: `S-2000 ผู้รับเหมาโครงสร้างเหล็ก ${YEARS_IN_BUSINESS} ปี ออกแบบ ผลิต ติดตั้ง โรงงาน โกดัง ชั้นลอย หลังคาช่วงกว้าง 4 ระบบ Truss, PEB, Beam, Cellular Beam ผลงานโรงงานถึง 30,000 ตร.ม. ทั่วประเทศ`,
   alternates: { canonical: "/" },
   openGraph: {
     title: "ผู้รับเหมาโครงสร้างเหล็ก โรงงาน โกดัง ชั้นลอย ทั่วประเทศ | S-2000",
@@ -31,7 +31,7 @@ const advantages: { t: string; d: string; i: SagaIconName }[] = [
 ];
 
 export default function HomePage() {
-  const featured = PROJECTS.filter((p) => p.featured).slice(0, 3);
+  const featured = PROJECTS.filter((p) => p.featured).slice(0, 6);
 
   return (
     <main>
@@ -83,7 +83,7 @@ export default function HomePage() {
           <div>
             <p>
               S-2000 ออกแบบ ผลิต และติดตั้งโครงสร้างเหล็กสำหรับโรงงาน โกดัง ชั้นลอย และหลังคาช่วงกว้าง
-              ทำงานได้ทั้ง 4 ระบบ จึงเลือกระบบที่เหมาะกับงานจริง ผลงานมีตั้งแต่หลังคาสถานีรถไฟสายสีแดง
+              ทำงานได้ทั้ง 4 ระบบ จึงเลือกระบบที่เหมาะกับงานจริง ผลงานมีตั้งแต่โรงงานพื้นที่ 30,000 ตร.ม.
               ถึงหลังคาสนามฟุตบอลช่วงกว้าง 50 เมตร
             </p>
             <dl className="stats2">
@@ -96,8 +96,8 @@ export default function HomePage() {
                 <dd>ระบบโครงสร้าง</dd>
               </div>
               <div>
-                <dt className="num">50 ม.</dt>
-                <dd>ช่วงกว้างไร้เสากลาง</dd>
+                <dt className="num">{PROJECTS.length}+</dt>
+                <dd>โครงการอ้างอิง</dd>
               </div>
             </dl>
             <Link href="/about" className="text-link">
@@ -134,7 +134,7 @@ export default function HomePage() {
           <div className="head2">
             <span className="kicker">PROJECTS</span>
             <h2>ผลงานที่ผ่านมา</h2>
-            <p>โครงการภาครัฐ อาคารอุตสาหกรรม และหลังคาสนามกีฬาช่วงกว้าง</p>
+            <p>โรงงาน คลังสินค้า ห้องเย็น โชว์รูม และถังน้ำยาง ทั่วประเทศ</p>
           </div>
           <div className="grid-3">
             {featured.map((p) => (

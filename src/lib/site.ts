@@ -47,7 +47,7 @@ export const OFFICE = {
   mapsUrl: "https://maps.google.com/?cid=5280487534722556263",
 };
 
-// สาขา (ตามโพสต์เพจ Facebook) — TODO: ยืนยันว่ายังเปิดทั้งหมด
+// สาขา (ตาม Company Profile บน Canva)
 export const BRANCHES = [
   {
     name: "สาขาสายเอเชีย หาดใหญ่",
@@ -56,12 +56,19 @@ export const BRANCHES = [
     mapsUrl: "https://maps.google.com/?cid=9691938572853490454",
   },
   {
-    name: "สาขาดอนเมือง กรุงเทพฯ",
-    addr: "เขตดอนเมือง กรุงเทพมหานคร",
+    name: "โรงงานผลิต สาขาบ้านไร่",
+    addr: "ถนนกาญจนวนิช ตำบลบ้านไร่ อำเภอหาดใหญ่ จังหวัดสงขลา",
+    phone: { display: "074-370-400", tel: "074370400" },
+    mapsUrl: "",
+  },
+  {
+    name: "สาขากรุงเทพฯ",
+    addr: "66/69 ถนนลาดปลาเค้า แขวงอนุสาวรีย์ เขตบางเขน กรุงเทพมหานคร",
     phone: { display: "099-478-1515", tel: "0994781515" },
-    mapsUrl: "https://goo.gl/maps/btU8Yn7HdbVJjfET6",
+    mapsUrl: "",
   },
 ];
+export const EMAIL_PROJECTS = "s2000.projects@gmail.com";
 
 export const AREA_SERVED = ["ประเทศไทย", "ภาคใต้", "สงขลา", "หาดใหญ่", "กรุงเทพมหานคร", "ภาคอีสาน", "ภาคกลาง"];
 

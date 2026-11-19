@@ -185,11 +185,15 @@ export default function ContactPage() {
                       โทร{" "}
                       <a href={`tel:${b.phone.tel}`} className="num" style={{ color: "var(--navy)", fontWeight: 600 }}>
                         {b.phone.display}
-                      </a>{" "}
-                      ·{" "}
-                      <a href={b.mapsUrl} target="_blank" rel="noopener noreferrer" style={{ color: "var(--navy)" }}>
-                        แผนที่
                       </a>
+                      {b.mapsUrl && (
+                        <>
+                          {" · "}
+                          <a href={b.mapsUrl} target="_blank" rel="noopener noreferrer" style={{ color: "var(--navy)" }}>
+                            แผนที่
+                          </a>
+                        </>
+                      )}
                     </div>
                   </div>
                 ))}

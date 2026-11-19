@@ -14,11 +14,13 @@ export interface Product {
   uses: string[];
   scope: string[]; // ขอบเขตงานที่รับ
   quoteNeeds: string[]; // ข้อมูลที่ควรส่งมาเพื่อขอราคา
+  projects?: string[]; // slug ผลงานที่เกี่ยวข้อง
 }
 
 export const PRODUCTS: Product[] = [
   {
     slug: "mezzanine",
+    projects: ["warehouse-mezzanine-floor"],
     icon: "rack",
     nameTh: "ชั้นลอยโรงงาน",
     nameEn: "Steel Mezzanine Floor",
@@ -37,6 +39,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     slug: "oil-tank",
+    projects: ["stainless-latex-tank-greenisoprene", "stainless-compound-tank-hicare"],
     icon: "oil-tank",
     nameTh: "ถังน้ำมัน",
     nameEn: "Steel Oil Storage Tank",
@@ -55,6 +58,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     slug: "latex-tank",
+    projects: ["latex-tank-960t-sadao", "latex-tank-700t-krabi", "latex-tank-600t-sadao", "latex-tank-100t-hicare", "punphin-rubber-factory-peb"],
     icon: "drop",
     nameTh: "ถังน้ำยาง",
     nameEn: "Latex Storage Tank",

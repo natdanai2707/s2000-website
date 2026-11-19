@@ -19,8 +19,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       </div>
       <div className="ptile-caption">
         <span>
-          {project.buildingType} · {project.location}
-          {project.span ? ` · ช่วงกว้าง ${project.span}` : ""}
+          {[project.buildingType, project.location, project.area, project.span && `ช่วงกว้าง ${project.span}`].filter(Boolean).join(" · ")}
         </span>
         <h3>{project.name}</h3>
       </div>

@@ -7,6 +7,8 @@ import JsonLd from "@/components/JsonLd";
 import ViewTracker from "@/components/ViewTracker";
 import { PRODUCTS, getProduct } from "@/lib/products";
 import SagaIcon from "@/components/SagaIcon";
+import ProjectCard from "@/components/ProjectCard";
+import { getProject } from "@/lib/projects";
 import { SITE_URL, COMPANY_TH, PHONE_MAIN, lineMessageUrl, AREA_SERVED } from "@/lib/site";
 
 interface Props {
@@ -35,6 +37,7 @@ export default async function ProductPage({ params }: Props) {
   const p = getProduct(slug);
   if (!p) notFound();
 
+  const related = (p.projects ?? []).map(getProject).filter((x): x is NonNullable<typeof x> => Boolean(x));
   const lineText = `สนใจ${p.nameTh} ขอใบเสนอราคาครับ (จากเว็บ)`;
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -113,6 +116,18 @@ export default async function ProductPage({ params }: Props) {
           </div>
         </div>
       </section>
+      {related.length > 0 && (
+        <section className="section2 section2--alt" style={{ paddingTop: 72, paddingBottom: 72 }}>
+          <div className="container">
+            <h2 style={{ fontSize: 26, marginBottom: 28 }}>ผลงาน{p.nameTh}</h2>
+            <div className="grid-3">
+              {related.map((x) => (
+                <ProjectCard key={x.slug} project={x} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
       <CTA lineText={lineText} />
     </main>
   );

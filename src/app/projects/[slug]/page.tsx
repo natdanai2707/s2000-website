@@ -7,8 +7,7 @@ import PageHeader from "@/components/PageHeader";
 import JsonLd from "@/components/JsonLd";
 import ViewTracker from "@/components/ViewTracker";
 import ProjectCard from "@/components/ProjectCard";
-import SystemDiagram from "@/components/SystemDiagram";
-import { PROJECTS, getProject, STAGE_LABEL, type PhotoStage } from "@/lib/projects";
+import { PROJECTS, getProject, STAGE_LABEL, CATEGORY_LABEL, type PhotoStage, type ProjectPhoto } from "@/lib/projects";
 import { getSystem } from "@/lib/systems";
 import { SITE_URL, COMPANY_TH } from "@/lib/site";
 
@@ -41,6 +40,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const STAGES: PhotoStage[] = ["before", "during", "after"];
 
+function Gallery({ photos }: { photos: ProjectPhoto[] }) {
+  return (
+    <div className="gallery2">
+      {photos.map((g) => (
+        <div key={g.src} className="gallery2-item">
+          <Image src={g.src} alt={g.alt} fill loading="lazy" sizes="(max-width: 767px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default async function ProjectPage({ params }: Props) {
   const { slug } = await params;
   const p = getProject(slug);
@@ -61,7 +72,10 @@ export default async function ProjectPage({ params }: Props) {
     ] as [string, string | null][]
   ).filter(([, v]) => Boolean(v)) as [string, string][];
 
-  const others = PROJECTS.filter((x) => x.slug !== p.slug).slice(0, 3);
+  const cover = p.photos.find((x) => x.stage === "after") ?? p.photos[0];
+  const rest = p.photos.filter((x) => x !== cover);
+  const hasStages = new Set(rest.map((x) => x.stage)).size > 1;
+  const others = PROJECTS.filter((x) => x.slug !== p.slug && x.category === p.category).slice(0, 3);
 
   const schema = {
     "@context": "https://schema.org",
@@ -69,7 +83,7 @@ export default async function ProjectPage({ params }: Props) {
     name: p.name,
     description: p.summary,
     url: `${SITE_URL}/projects/${p.slug}`,
-    locationCreated: { "@type": "Place", name: p.location },
+    ...(p.location ? { locationCreated: { "@type": "Place", name: p.location } } : {}),
     creator: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: COMPANY_TH },
     ...(p.photos.length ? { image: p.photos.map((x) => `${SITE_URL}${x.src}`) } : {}),
   };
@@ -90,8 +104,15 @@ export default async function ProjectPage({ params }: Props) {
 
       <section className="section section--tight">
         <div className="container">
-          <div className="grid-2" style={{ gap: 48, alignItems: "start" }}>
+          {cover && (
+            <div className="proj-hero">
+              <Image src={cover.src} alt={cover.alt} fill priority sizes="(max-width: 1200px) 100vw, 1200px" style={{ objectFit: "cover" }} />
+            </div>
+          )}
+          <div className="grid-2" style={{ gap: 56, alignItems: "start", marginTop: cover ? 48 : 0 }}>
             <div>
+              <span className="kicker">{CATEGORY_LABEL[p.category]}</span>
+              <p style={{ fontSize: 18, lineHeight: 1.85 }}>{p.summary}</p>
               {p.story.map((t, i) => (
                 <p key={i} style={{ fontSize: 17, lineHeight: 1.85 }}>
                   {t}
@@ -99,15 +120,14 @@ export default async function ProjectPage({ params }: Props) {
               ))}
               {system && (
                 <p>
-                  อ่านเรื่องระบบที่ใช้:{" "}
-                  <Link href={`/services/${system.slug}`} className="link-more">
+                  ระบบที่ใช้:{" "}
+                  <Link href={`/services/${system.slug}`} className="text-link">
                     {system.nameTh} →
                   </Link>
                 </p>
               )}
             </div>
             <div>
-              <h2 style={{ fontSize: 22, marginBottom: 16 }}>ข้อมูลโครงการ</h2>
               <div className="table-scroll">
                 <table className="spec-table">
                   <tbody>
@@ -125,37 +145,26 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="section section--alt">
-        <div className="container">
-          <div className="section-head">
-            <span className="eyebrow">ภาพโครงการ</span>
-            <h2>ก่อน ระหว่าง และหลังก่อสร้าง</h2>
-          </div>
-          {p.photos.length === 0 ? (
-            <div className="card diagram-card" style={{ maxWidth: 720 }}>
-              <SystemDiagram slug={p.system ?? "truss"} />
-              <p style={{ color: "var(--gray)", margin: "12px 0 0", textAlign: "center" }}>ภาพโครงการกำลังอัปเดต</p>
-            </div>
-          ) : (
-            STAGES.map((stage) => {
-              const photos = p.photos.filter((x) => x.stage === stage);
-              if (!photos.length) return null;
-              return (
-                <div key={stage} style={{ marginBottom: 40 }}>
-                  <h3 style={{ fontSize: 20, marginBottom: 16 }}>{STAGE_LABEL[stage]}</h3>
-                  <div className="work-gallery">
-                    {photos.map((g) => (
-                      <div key={g.src} className="work-gallery__item">
-                        <Image src={g.src} alt={g.alt} fill loading="lazy" sizes="(max-width: 767px) 50vw, 33vw" style={{ objectFit: "cover" }} />
-                      </div>
-                    ))}
+      {rest.length > 0 && (
+        <section className="section2 section2--alt" style={{ paddingTop: 72, paddingBottom: 72 }}>
+          <div className="container">
+            {hasStages ? (
+              STAGES.map((stage) => {
+                const photos = rest.filter((x) => x.stage === stage);
+                if (!photos.length) return null;
+                return (
+                  <div key={stage} style={{ marginBottom: 40 }}>
+                    <h2 style={{ fontSize: 22, marginBottom: 20 }}>{STAGE_LABEL[stage]}</h2>
+                    <Gallery photos={photos} />
                   </div>
-                </div>
-              );
-            })
-          )}
-        </div>
-      </section>
+                );
+              })
+            ) : (
+              <Gallery photos={rest} />
+            )}
+          </div>
+        </section>
+      )}
 
       {others.length > 0 && (
         <section className="section">

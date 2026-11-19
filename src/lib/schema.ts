@@ -68,7 +68,7 @@ export const orgSchema = {
         name: `${COMPANY_TH} ${b.name}`,
         telephone: b.phone.display,
         address: { "@type": "PostalAddress", streetAddress: b.addr, addressCountry: "TH" },
-        hasMap: b.mapsUrl,
+        ...(b.mapsUrl ? { hasMap: b.mapsUrl } : {}),
         openingHours: OPENING_HOURS_SCHEMA,
       })),
       ...(sameAs.length ? { sameAs } : {}),
