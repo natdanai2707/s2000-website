@@ -27,27 +27,41 @@ export const LINE_MSG = {
   siteVisit: "ขอนัดทีมงานดูหน้างาน (จากเว็บ)",
 };
 
-// TODO: ยืนยันเบอร์หลักของ S-2000 (ตอนนี้ใช้เบอร์ที่แสดงบนเว็บเหล็กใต้)
-export const PHONE_MAIN = { display: "099-795-9526", tel: "0997959526" };
-// TODO: ใส่อีเมลบริษัท แล้วจะแสดงในหน้าติดต่อ/footer อัตโนมัติ
-export const EMAIL = "";
-// TODO: ใส่ลิงก์เพจ Facebook
-export const FACEBOOK_URL = "";
+// เบอร์สำนักงานใหญ่ (ตามเพจ Facebook บริษัท)
+export const PHONE_MAIN = { display: "074-280-545", tel: "074280545" };
+export const EMAIL = "s-2000.steel@gmail.com";
+export const FACEBOOK_URL = "https://www.facebook.com/s2000steel";
 
 export const OPENING_HOURS_TH = "จันทร์–เสาร์ 08.00–17.00 น.";
 export const OPENING_HOURS_SCHEMA = "Mo-Sa 08:00-17:00";
 
-// ที่ตั้งสำนักงาน/โรงงาน — TODO: ใส่ที่อยู่เต็ม พิกัด และลิงก์ Google Maps
+// สำนักงานใหญ่และโรงงาน (บ้านพรุ หาดใหญ่)
 export const OFFICE = {
   name: "สำนักงานใหญ่และโรงงาน",
-  addr: "อำเภอหาดใหญ่ จังหวัดสงขลา",
-  streetAddress: "",
+  addr: "1 หมู่ 1 ถนนชุมแสง ตำบลบ้านพรุ อำเภอหาดใหญ่ จังหวัดสงขลา 90250",
+  streetAddress: "1 หมู่ 1 ถนนชุมแสง ตำบลบ้านพรุ",
   addressLocality: "อำเภอหาดใหญ่",
   addressRegion: "สงขลา",
-  postalCode: "90110",
-  geo: null as { lat: number; lng: number } | null,
-  mapsUrl: "",
+  postalCode: "90250",
+  geo: { lat: 6.9561681, lng: 100.4742269 } as { lat: number; lng: number } | null,
+  mapsUrl: "https://maps.google.com/?cid=5280487534722556263",
 };
+
+// สาขา (ตามโพสต์เพจ Facebook) — TODO: ยืนยันว่ายังเปิดทั้งหมด
+export const BRANCHES = [
+  {
+    name: "สาขาสายเอเชีย หาดใหญ่",
+    addr: "1199 ถนนสายเอเชีย ตำบลคอหงส์ อำเภอหาดใหญ่ จังหวัดสงขลา 90110",
+    phone: { display: "074-370-400", tel: "074370400" },
+    mapsUrl: "https://maps.google.com/?cid=9691938572853490454",
+  },
+  {
+    name: "สาขาดอนเมือง กรุงเทพฯ",
+    addr: "เขตดอนเมือง กรุงเทพมหานคร",
+    phone: { display: "099-478-1515", tel: "0994781515" },
+    mapsUrl: "https://goo.gl/maps/btU8Yn7HdbVJjfET6",
+  },
+];
 
 export const AREA_SERVED = ["ประเทศไทย", "ภาคใต้", "สงขลา", "หาดใหญ่", "กรุงเทพมหานคร", "ภาคอีสาน", "ภาคกลาง"];
 

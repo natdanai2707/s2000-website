@@ -9,6 +9,7 @@ import {
   OPENING_HOURS_SCHEMA,
   AREA_SERVED,
   sameAs,
+  BRANCHES,
 } from "@/lib/site";
 
 // Organization + WebSite + LocalBusiness (GeneralContractor) ใต้ @graph เดียว
@@ -62,6 +63,14 @@ export const orgSchema = {
       ...(OFFICE.mapsUrl ? { hasMap: OFFICE.mapsUrl } : {}),
       openingHours: OPENING_HOURS_SCHEMA,
       areaServed: AREA_SERVED,
+      department: BRANCHES.map((b) => ({
+        "@type": "GeneralContractor",
+        name: `${COMPANY_TH} ${b.name}`,
+        telephone: b.phone.display,
+        address: { "@type": "PostalAddress", streetAddress: b.addr, addressCountry: "TH" },
+        hasMap: b.mapsUrl,
+        openingHours: OPENING_HOURS_SCHEMA,
+      })),
       ...(sameAs.length ? { sameAs } : {}),
     },
   ],

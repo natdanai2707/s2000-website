@@ -14,6 +14,7 @@ import {
   OFFICE,
   SISTER,
   EMAIL,
+  BRANCHES,
 } from "@/lib/site";
 
 export const dynamic = "force-static";
@@ -33,6 +34,7 @@ export function GET() {
     `- โทร: ${PHONE_MAIN.display}`,
     `- LINE: ${LINE_ID}`,
     ...(EMAIL ? [`- อีเมล: ${EMAIL}`] : []),
+    ...BRANCHES.map((b) => `- ${b.name}: ${b.addr} โทร ${b.phone.display}`),
     `- เวลาทำการ: ${OPENING_HOURS_TH}`,
     "- พื้นที่ให้บริการ: ทั่วประเทศไทย",
     `- บริษัทในเครือ: ${SISTER.company} (${SISTER.url}) ${SISTER.desc}`,

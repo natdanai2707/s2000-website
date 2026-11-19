@@ -10,6 +10,7 @@ import {
   PHONE_MAIN,
   OFFICE,
   SISTER,
+  BRANCHES,
   YEARS_IN_BUSINESS,
   FOUNDED_YEAR_BE,
 } from "@/lib/site";
@@ -87,6 +88,12 @@ export default function Footer() {
               <strong>{OFFICE.name}</strong>
               <address>{OFFICE.addr}</address>
             </div>
+            {BRANCHES.map((b) => (
+              <div key={b.name} className="footer-branch">
+                <strong>{b.name}</strong>
+                <span className="num"> โทร {b.phone.display}</span>
+              </div>
+            ))}
             <ul>
               <li>
                 โทร:{" "}

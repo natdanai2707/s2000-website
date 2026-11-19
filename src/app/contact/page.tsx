@@ -14,6 +14,7 @@ import {
   FACEBOOK_URL,
   OPENING_HOURS_TH,
   OFFICE,
+  BRANCHES,
   COMPANY_TH,
 } from "@/lib/site";
 
@@ -173,6 +174,25 @@ export default function ContactPage() {
                     เปิดใน Google Maps →
                   </a>
                 )}
+              </div>
+              <div className="card" style={{ padding: 24, marginTop: 24 }}>
+                <h3 style={{ fontSize: 18, marginBottom: 12 }}>สาขา</h3>
+                {BRANCHES.map((b) => (
+                  <div key={b.name} style={{ padding: "10px 0", borderTop: "1px solid var(--rule)", fontSize: 15 }}>
+                    <strong style={{ color: "var(--navy)" }}>{b.name}</strong>
+                    <div style={{ color: "var(--gray)" }}>{b.addr}</div>
+                    <div>
+                      โทร{" "}
+                      <a href={`tel:${b.phone.tel}`} className="num" style={{ color: "var(--navy)", fontWeight: 600 }}>
+                        {b.phone.display}
+                      </a>{" "}
+                      ·{" "}
+                      <a href={b.mapsUrl} target="_blank" rel="noopener noreferrer" style={{ color: "var(--navy)" }}>
+                        แผนที่
+                      </a>
+                    </div>
+                  </div>
+                ))}
               </div>
               {OFFICE.geo && (
                 <div className="card map-embed" style={{ marginTop: 24, overflow: "hidden" }}>
