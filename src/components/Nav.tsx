@@ -51,7 +51,7 @@ export default function Nav() {
       <nav className={`nav${compact ? " nav--compact" : ""}`} aria-label="เมนูหลัก">
         <div className="nav-inner">
           <Link href="/" className="nav-logo" aria-label="S-2000 กลับหน้าแรก">
-            <Logo height={compact ? 34 : 40} />
+            <Logo height={compact ? 40 : 48} />
           </Link>
 
           <ul className="nav-links">

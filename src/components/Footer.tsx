@@ -38,7 +38,7 @@ export default function Footer() {
         <div className="footer-main">
           <div className="footer-brand">
             <Link href="/" aria-label="S-2000 กลับหน้าแรก" style={{ display: "inline-block", marginBottom: 16 }}>
-              <Logo light height={48} />
+              <Logo light height={56} />
             </Link>
             <p>
               ผู้รับเหมาโครงสร้างเหล็กตั้งแต่ พ.ศ. {FOUNDED_YEAR_BE} ({YEARS_IN_BUSINESS} ปี) ออกแบบ ผลิต และติดตั้ง

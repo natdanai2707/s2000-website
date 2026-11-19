@@ -1206,13 +1206,13 @@ body { padding-bottom: 0 !important; }
    v4 — สีตามโลโก้: น้ำเงิน + เหลืองเล็กน้อย (ตัวอักษร/เส้น)
    ============================================================ */
 :root {
-  --navy: #0B2B6B;
-  --navy-soft: #082255;
-  --navy-darker: #061838;
-  --blue: #1F4FD1;
-  --amber: #1F4FD1;
-  --amber-dark: #163CA8;
-  --amber-soft: #EAF0FD;
+  --navy: #1F2263;
+  --navy-soft: #181B52;
+  --navy-darker: #10123A;
+  --blue: #3738AF;
+  --amber: #3738AF;
+  --amber-dark: #2A2B8C;
+  --amber-soft: #EDEDFA;
   --gold: #E8B54A;
 }
 .kicker { color: var(--blue); }
@@ -1225,7 +1225,7 @@ body { padding-bottom: 0 !important; }
 .text-link--light:hover { color: var(--gold); }
 .hero2 {
   background-image:
-    linear-gradient(90deg, rgba(6, 24, 56, 0.93) 0%, rgba(6, 24, 56, 0.72) 50%, rgba(6, 24, 56, 0.25) 100%),
+    linear-gradient(90deg, rgba(16, 18, 58, 0.93) 0%, rgba(16, 18, 58, 0.72) 50%, rgba(16, 18, 58, 0.25) 100%),
     url("/images/hero.webp");
 }
 .cta2 { background: var(--navy); border-top: 3px solid var(--gold); }
@@ -1244,7 +1244,7 @@ body { padding-bottom: 0 !important; }
 /* Warehouse page */
 .wh-hero {
   position: relative; color: #fff; min-height: min(80vh, 680px); display: flex; align-items: center;
-  background-image: linear-gradient(90deg, rgba(6, 24, 56, 0.94) 0%, rgba(6, 24, 56, 0.75) 55%, rgba(6, 24, 56, 0.3) 100%), url("/images/wh-asia.webp");
+  background-image: linear-gradient(90deg, rgba(16, 18, 58, 0.94) 0%, rgba(16, 18, 58, 0.75) 55%, rgba(16, 18, 58, 0.3) 100%), url("/images/wh-asia.webp");
   background-size: cover; background-position: center;
 }
 .wh-hero-inner { width: 100%; max-width: 1200px; margin: 0 auto; padding: 80px 24px; }
