@@ -4,8 +4,8 @@
 export const SITE_URL = "https://s2000steelfab.com";
 
 // ปีก่อตั้ง — ตัวเลข "กี่ปี" ทั้งเว็บคำนวณจากค่านี้ตอน build
-export const FOUNDED_YEAR = 1998; // ค.ศ.
-export const FOUNDED_YEAR_BE = FOUNDED_YEAR + 543; // พ.ศ. 2541
+export const FOUNDED_YEAR = 1997; // ค.ศ. (พ.ศ. 2540 ตาม Company Profile และทะเบียนบริษัท)
+export const FOUNDED_YEAR_BE = FOUNDED_YEAR + 543; // พ.ศ. 2540
 export const YEARS_IN_BUSINESS = new Date().getFullYear() - FOUNDED_YEAR;
 // วันที่แก้เนื้อหาล่าสุด — ใช้เป็น lastmod ใน sitemap
 export const CONTENT_UPDATED = "2026-11-18";

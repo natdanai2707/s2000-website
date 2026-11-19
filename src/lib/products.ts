@@ -39,7 +39,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     slug: "oil-tank",
-    projects: ["stainless-latex-tank-greenisoprene", "stainless-compound-tank-hicare"],
+    projects: ["stainless-latex-tank-30t-chana", "stainless-compound-tank-15t-hatyai"],
     icon: "oil-tank",
     nameTh: "ถังน้ำมัน",
     nameEn: "Steel Oil Storage Tank",
@@ -58,7 +58,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     slug: "latex-tank",
-    projects: ["latex-tank-960t-sadao", "latex-tank-700t-krabi", "latex-tank-600t-sadao", "latex-tank-100t-hicare", "punphin-rubber-factory-peb"],
+    projects: ["latex-tank-960t-sadao", "latex-tank-700t-krabi", "latex-tank-600t-sadao", "latex-tank-100t-hatyai", "punphin-rubber-factory-peb"],
     icon: "drop",
     nameTh: "ถังน้ำยาง",
     nameEn: "Latex Storage Tank",

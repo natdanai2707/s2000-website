@@ -10,7 +10,7 @@ import { SYSTEMS } from "@/lib/systems";
 import { PROJECTS } from "@/lib/projects";
 import { PRODUCTS } from "@/lib/products";
 import { orgSchema } from "@/lib/schema";
-import { YEARS_IN_BUSINESS, FOUNDED_YEAR_BE } from "@/lib/site";
+import { YEARS_IN_BUSINESS, FOUNDED_YEAR, FOUNDED_YEAR_BE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: "ผู้รับเหมาโครงสร้างเหล็ก โรงงาน โกดัง ชั้นลอย ทั่วประเทศ | S-2000 Steel Fabricated" },
@@ -40,7 +40,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="hero2">
         <div className="hero2-inner">
-          <span className="kicker kicker--light">S-2000 STEEL FABRICATED · SINCE 1998</span>
+          <span className="kicker kicker--light">S-2000 STEEL FABRICATED · SINCE {FOUNDED_YEAR}</span>
           <h1>
             โครงสร้างเหล็กสำหรับ
             <br />

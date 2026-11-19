@@ -21,7 +21,7 @@ import CookieConsent from "@/components/CookieConsent";
 import { SITE_URL, SITE_NAME, COMPANY_TH, COMPANY_EN } from "@/lib/site";
 
 const DEFAULT_TITLE = "ผู้รับเหมาโครงสร้างเหล็ก โรงงาน โกดัง ชั้นลอย | S-2000 Steel Fabricated";
-const DEFAULT_DESC = `S-2000 ผู้รับเหมาโครงสร้างเหล็กตั้งแต่ปี 2541 ออกแบบ ผลิต ติดตั้ง โรงงาน โกดัง ชั้นลอย หลังคาช่วงกว้าง ระบบ Truss, PEB, Beam, Cellular Beam โรงงานหาดใหญ่ รับงานทั่วประเทศ`;
+const DEFAULT_DESC = `S-2000 ผู้รับเหมาโครงสร้างเหล็กตั้งแต่ปี 2540 ออกแบบ ผลิต ติดตั้ง โรงงาน โกดัง ชั้นลอย หลังคาช่วงกว้าง ระบบ Truss, PEB, Beam, Cellular Beam โรงงานหาดใหญ่ รับงานทั่วประเทศ`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
