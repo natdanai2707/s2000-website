@@ -22,6 +22,7 @@ const menuLinks = [
   { label: "หน้าแรก", href: "/" },
   { label: "ระบบโครงสร้าง", href: "/services" },
   { label: "ผลงาน", href: "/projects" },
+  { label: "โกดังให้เช่า หาดใหญ่", href: "/warehouse-hatyai" },
   { label: "งานผลิตอื่น", href: "/products" },
   { label: "บทความ", href: "/blog" },
   { label: "เกี่ยวกับเรา", href: "/about" },
@@ -83,6 +84,14 @@ export default function Footer() {
           </div>
 
           <div className="footer-contact">
+            <Link href="/warehouse-hatyai" className="footer-wh" aria-label="โกดังให้เช่า หาดใหญ่ S-2000 Warehouse">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/logo-warehouse.png" alt="S-2000 Warehouse" width={56} height={56} />
+              <span>
+                <strong>S-2000 Warehouse</strong>
+                โกดังให้เช่า หาดใหญ่ →
+              </span>
+            </Link>
             <h4>ติดต่อเรา</h4>
             <div className="footer-branch">
               <strong>{OFFICE.name}</strong>

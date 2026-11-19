@@ -8,8 +8,6 @@ export default function ArticleCover({ article, sizes, priority }: { article: Ar
     return <Image src={article.cover} alt={article.coverAlt ?? article.title} fill priority={priority} sizes={sizes} style={{ objectFit: "cover" }} />;
   }
   return (
-    <div className="diagram-fill">
-      <SystemDiagram slug={article.coverSystem ?? "peb"} />
-    </div>
+    <SystemDiagram slug={article.coverSystem ?? "peb"} cover />
   );
 }

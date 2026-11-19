@@ -12,9 +12,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         {cover ? (
           <Image src={cover.src} alt={cover.alt} fill sizes="(max-width: 767px) 100vw, 33vw" style={{ objectFit: "cover" }} />
         ) : (
-          <div className="diagram-fill">
-            <SystemDiagram slug={project.system ?? "truss"} />
-          </div>
+          <SystemDiagram slug={project.system ?? "truss"} cover />
         )}
       </div>
       <div className="ptile-caption">

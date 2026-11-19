@@ -1201,3 +1201,66 @@ body { padding-bottom: 0 !important; }
 .timeline strong { display: block; font-family: var(--font-display); font-weight: 600; color: var(--navy); font-size: 18px; margin-bottom: 4px; }
 .timeline p { color: var(--gray); margin: 0; }
 @media (max-width: 599px) { .timeline li { grid-template-columns: 1fr; gap: 4px; } }
+
+/* ============================================================
+   v4 — สีตามโลโก้: น้ำเงิน + เหลืองเล็กน้อย (ตัวอักษร/เส้น)
+   ============================================================ */
+:root {
+  --navy: #0B2B6B;
+  --navy-soft: #082255;
+  --navy-darker: #061838;
+  --blue: #1F4FD1;
+  --amber: #1F4FD1;
+  --amber-dark: #163CA8;
+  --amber-soft: #EAF0FD;
+  --gold: #E8B54A;
+}
+.kicker { color: var(--blue); }
+.kicker--light { color: var(--gold); }
+.head2 h2::after { content: ""; display: block; width: 44px; height: 3px; background: var(--gold); margin: 18px auto 0; }
+.intro2 h2::after, .wh-site h2::after { content: ""; display: block; width: 44px; height: 3px; background: var(--gold); margin-top: 18px; }
+.nav-link--active::after { background: var(--gold); height: 3px; }
+.timeline li::before { background: var(--gold); }
+.text-link:hover, .link-more:hover { color: var(--blue); }
+.text-link--light:hover { color: var(--gold); }
+.hero2 {
+  background-image:
+    linear-gradient(90deg, rgba(6, 24, 56, 0.93) 0%, rgba(6, 24, 56, 0.72) 50%, rgba(6, 24, 56, 0.25) 100%),
+    url("/images/hero.webp");
+}
+.cta2 { background: var(--navy); border-top: 3px solid var(--gold); }
+.footer { background: var(--navy-darker); }
+.footer h4 { border-bottom-color: rgba(232, 181, 74, 0.5) !important; }
+.gold { color: var(--gold); }
+.quote-box { border-left-color: var(--gold); }
+.render-card { overflow: hidden; background: var(--paper-alt); }
+.tile-media--render { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--paper-alt); border-bottom: 1px solid var(--rule); }
+.ptile-media img { transition: transform 0.4s ease; }
+.footer-wh { display: flex; gap: 12px; align-items: center; padding: 12px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.15); text-decoration: none; color: rgba(255,255,255,0.8); font-size: 14px; }
+.footer-wh img { width: 56px; height: 56px; border-radius: 50%; background: #fff; }
+.footer-wh strong { display: block; color: #fff; font-size: 15px; }
+.footer-wh:hover { border-color: var(--gold); }
+
+/* Warehouse page */
+.wh-hero {
+  position: relative; color: #fff; min-height: min(80vh, 680px); display: flex; align-items: center;
+  background-image: linear-gradient(90deg, rgba(6, 24, 56, 0.94) 0%, rgba(6, 24, 56, 0.75) 55%, rgba(6, 24, 56, 0.3) 100%), url("/images/wh-asia.webp");
+  background-size: cover; background-position: center;
+}
+.wh-hero-inner { width: 100%; max-width: 1200px; margin: 0 auto; padding: 80px 24px; }
+.wh-hero h1 { color: #fff; font-size: 52px; line-height: 1.2; font-weight: 600; }
+.wh-hero p { color: rgba(255, 255, 255, 0.82); font-size: 18px; max-width: 560px; margin: 22px 0 36px; line-height: 1.75; }
+.wh-logo { width: 96px; height: 96px; border-radius: 50%; background: #fff; display: block; margin-bottom: 24px; }
+@media (max-width: 767px) { .wh-hero h1 { font-size: 32px; } .wh-logo { width: 72px; height: 72px; } }
+.wh-site { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; }
+.wh-site--rev .wh-site-media { order: 2; }
+.wh-site-media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--paper-alt); }
+.wh-type { color: var(--blue); font-weight: 600; margin: 16px 0 4px; }
+.wh-size { font-size: 34px; font-weight: 700; color: var(--navy); margin: 0 0 20px; }
+.wh-points { list-style: none; margin: 0 0 28px; padding: 0; border-top: 1px solid var(--rule); }
+.wh-points li { padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.wh-points strong { display: block; color: var(--navy); font-weight: 600; }
+.wh-points span { color: var(--gray); font-size: 15px; }
+.wh-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+.wh-gallery > div { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--paper-alt); }
+@media (max-width: 899px) { .wh-site { grid-template-columns: 1fr; gap: 28px; } .wh-site--rev .wh-site-media { order: 0; } }

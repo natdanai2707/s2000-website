@@ -13,8 +13,8 @@ const navItems = [
   { th: "หน้าแรก", href: "/" },
   { th: "ระบบโครงสร้าง", href: "/services", mega: true },
   { th: "ผลงาน", href: "/projects" },
+  { th: "โกดังให้เช่า", href: "/warehouse-hatyai" },
   { th: "งานผลิตอื่น", href: "/products" },
-  { th: "บทความ", href: "/blog" },
   { th: "เกี่ยวกับเรา", href: "/about" },
   { th: "ติดต่อเรา", href: "/contact" },
 ];

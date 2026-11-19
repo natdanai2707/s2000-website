@@ -105,7 +105,7 @@ export default async function SystemPage({ params }: Props) {
             </div>
 
             <div className="sticky-col">
-              <div className="card diagram-card">
+              <div className="render-card">
                 <SystemDiagram slug={s.slug} />
               </div>
               <h2 style={{ fontSize: 22, margin: "24px 0 16px" }}>ข้อมูลระบบ</h2>
