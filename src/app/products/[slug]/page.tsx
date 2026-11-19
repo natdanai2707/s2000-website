@@ -1,3 +1,5 @@
+import PhotoGrid from "@/components/PhotoGrid";
+import { GALLERY_TANKS } from "@/lib/gallery";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -125,6 +127,14 @@ export default async function ProductPage({ params }: Props) {
                 <ProjectCard key={x.slug} project={x} />
               ))}
             </div>
+          </div>
+        </section>
+      )}
+      {(p.slug === "oil-tank" || p.slug === "latex-tank") && (
+        <section className="section2" style={{ paddingTop: 72, paddingBottom: 72 }}>
+          <div className="container">
+            <h2 style={{ fontSize: 26, marginBottom: 28 }}>ภาพงานถังที่ S-2000 ผลิตและติดตั้ง</h2>
+            <PhotoGrid photos={GALLERY_TANKS} />
           </div>
         </section>
       )}

@@ -1,0 +1,63 @@
+// ภาพผลงานเพิ่มเติมจาก Canva (ไม่ระบุชื่อลูกค้า)
+export interface GalleryPhoto { src: string; alt: string; width: number; height: number }
+
+export const GALLERY_WORKS: GalleryPhoto[] = [
+  { src: "/images/gallery/works/01.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 1050 },
+  { src: "/images/gallery/works/02.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 1050 },
+  { src: "/images/gallery/works/03.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 1050 },
+  { src: "/images/gallery/works/04.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 1050 },
+  { src: "/images/gallery/works/05.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 1050 },
+  { src: "/images/gallery/works/06.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 1050 },
+  { src: "/images/gallery/works/07.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 1050 },
+  { src: "/images/gallery/works/08.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 1050 },
+  { src: "/images/gallery/works/09.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 1867 },
+  { src: "/images/gallery/works/10.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 1867 },
+  { src: "/images/gallery/works/11.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 1050 },
+  { src: "/images/gallery/works/12.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 1050 },
+  { src: "/images/gallery/works/13.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 1050 },
+  { src: "/images/gallery/works/14.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 1050 },
+  { src: "/images/gallery/works/15.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 1050 },
+  { src: "/images/gallery/works/16.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 1050 },
+  { src: "/images/gallery/works/17.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 450, height: 337 },
+  { src: "/images/gallery/works/18.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 555, height: 417 },
+  { src: "/images/gallery/works/19.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 788 },
+  { src: "/images/gallery/works/20.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 788 },
+  { src: "/images/gallery/works/21.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 788 },
+  { src: "/images/gallery/works/22.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 788 },
+  { src: "/images/gallery/works/23.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1400, height: 1050 },
+  { src: "/images/gallery/works/24.webp", alt: "งานโครงสร้างเหล็กโดย S-2000", width: 1108, height: 1477 },
+];
+
+export const GALLERY_TANKS: GalleryPhoto[] = [
+  { src: "/images/gallery/tanks/01.webp", alt: "งานถังเหล็กโดย S-2000", width: 1172, height: 428 },
+  { src: "/images/gallery/tanks/02.webp", alt: "งานถังเหล็กโดย S-2000", width: 960, height: 720 },
+  { src: "/images/gallery/tanks/03.webp", alt: "งานถังเหล็กโดย S-2000", width: 1400, height: 1050 },
+  { src: "/images/gallery/tanks/04.webp", alt: "งานถังเหล็กโดย S-2000", width: 1400, height: 1050 },
+  { src: "/images/gallery/tanks/05.webp", alt: "งานถังเหล็กโดย S-2000", width: 758, height: 597 },
+  { src: "/images/gallery/tanks/06.webp", alt: "งานถังเหล็กโดย S-2000", width: 567, height: 319 },
+  { src: "/images/gallery/tanks/07.webp", alt: "งานถังเหล็กโดย S-2000", width: 1108, height: 1477 },
+  { src: "/images/gallery/tanks/08.webp", alt: "งานถังเหล็กโดย S-2000", width: 1400, height: 1030 },
+  { src: "/images/gallery/tanks/09.webp", alt: "งานถังเหล็กโดย S-2000", width: 1083, height: 611 },
+  { src: "/images/gallery/tanks/10.webp", alt: "งานถังเหล็กโดย S-2000", width: 1084, height: 814 },
+  { src: "/images/gallery/tanks/11.webp", alt: "งานถังเหล็กโดย S-2000", width: 464, height: 618 },
+  { src: "/images/gallery/tanks/12.webp", alt: "งานถังเหล็กโดย S-2000", width: 720, height: 960 },
+  { src: "/images/gallery/tanks/13.webp", alt: "งานถังเหล็กโดย S-2000", width: 607, height: 477 },
+  { src: "/images/gallery/tanks/14.webp", alt: "งานถังเหล็กโดย S-2000", width: 1131, height: 771 },
+  { src: "/images/gallery/tanks/15.webp", alt: "งานถังเหล็กโดย S-2000", width: 465, height: 618 },
+  { src: "/images/gallery/tanks/16.webp", alt: "งานถังเหล็กโดย S-2000", width: 464, height: 619 },
+];
+
+export const GALLERY_FACTORY: GalleryPhoto[] = [
+  { src: "/images/gallery/factory/01.webp", alt: "โรงงานผลิตโครงสร้างเหล็ก S-2000 หาดใหญ่", width: 1400, height: 1050 },
+  { src: "/images/gallery/factory/02.webp", alt: "โรงงานผลิตโครงสร้างเหล็ก S-2000 หาดใหญ่", width: 1400, height: 1050 },
+  { src: "/images/gallery/factory/03.webp", alt: "โรงงานผลิตโครงสร้างเหล็ก S-2000 หาดใหญ่", width: 1400, height: 1050 },
+  { src: "/images/gallery/factory/04.webp", alt: "โรงงานผลิตโครงสร้างเหล็ก S-2000 หาดใหญ่", width: 1400, height: 1050 },
+  { src: "/images/gallery/factory/05.webp", alt: "โรงงานผลิตโครงสร้างเหล็ก S-2000 หาดใหญ่", width: 1200, height: 900 },
+  { src: "/images/gallery/factory/06.webp", alt: "โรงงานผลิตโครงสร้างเหล็ก S-2000 หาดใหญ่", width: 1400, height: 1050 },
+  { src: "/images/gallery/factory/07.webp", alt: "โรงงานผลิตโครงสร้างเหล็ก S-2000 หาดใหญ่", width: 1400, height: 1050 },
+  { src: "/images/gallery/factory/08.webp", alt: "โรงงานผลิตโครงสร้างเหล็ก S-2000 หาดใหญ่", width: 1400, height: 1050 },
+  { src: "/images/gallery/factory/09.webp", alt: "โรงงานผลิตโครงสร้างเหล็ก S-2000 หาดใหญ่", width: 1400, height: 1050 },
+  { src: "/images/gallery/factory/10.webp", alt: "โรงงานผลิตโครงสร้างเหล็ก S-2000 หาดใหญ่", width: 1400, height: 1050 },
+  { src: "/images/gallery/factory/11.webp", alt: "โรงงานผลิตโครงสร้างเหล็ก S-2000 หาดใหญ่", width: 1400, height: 1050 },
+  { src: "/images/gallery/factory/12.webp", alt: "โรงงานผลิตโครงสร้างเหล็ก S-2000 หาดใหญ่", width: 1400, height: 1054 },
+];

@@ -3,6 +3,8 @@ import CTA from "@/components/CTA";
 import PageHeader from "@/components/PageHeader";
 import ProjectCard from "@/components/ProjectCard";
 import JsonLd from "@/components/JsonLd";
+import PhotoGrid from "@/components/PhotoGrid";
+import { GALLERY_WORKS, GALLERY_FACTORY } from "@/lib/gallery";
 import { PROJECTS, CATEGORY_LABEL, type ProjectCategory } from "@/lib/projects";
 import { SITE_URL } from "@/lib/site";
 
@@ -57,6 +59,19 @@ export default function ProjectsPage() {
           </div>
         </section>
       ))}
+      <section id="more" className="section2" style={{ paddingTop: 72, paddingBottom: 72 }}>
+        <div className="container">
+          <h2 style={{ fontSize: 26, marginBottom: 8 }}>ภาพผลงานเพิ่มเติม</h2>
+          <p style={{ color: "var(--gray)", marginBottom: 28 }}>งานโครงสร้างเหล็ก หลังคา และโรงงานที่ S-2000 ผลิตและติดตั้ง</p>
+          <PhotoGrid photos={GALLERY_WORKS} />
+        </div>
+      </section>
+      <section className="section2 section2--alt" style={{ paddingTop: 72, paddingBottom: 72 }}>
+        <div className="container">
+          <h2 style={{ fontSize: 26, marginBottom: 28 }}>โรงงานผลิตของเรา</h2>
+          <PhotoGrid photos={GALLERY_FACTORY} />
+        </div>
+      </section>
       <CTA title="โครงการของคุณคือผลงานถัดไป" />
     </main>
   );
